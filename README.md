@@ -2,6 +2,13 @@
 
 ![Alt Text](./content/img.png)
 
+<h2>Our Team</h2>
+<ul>
+    <li><strong><a href="https://www.linkedin.com/in/muhammad-hafiz-azhari">Muhammad Hafiz Azhari</strong></li>
+    <li><strong><a href="https://www.linkedin.com/in/quocdinh-ford4/">Quoc (Ford) Dinh</strong></li>
+    <li><strong><a href="https://www.linkedin.com/in/yashdeepdadiala/">Yashdeep Singh Dadiala</a></strong></li>
+</ul>
+
 <h2>Overview</h2>
 <p>This project aims to provide users with a convenient way to interact with an email-based assistant through a chat interface. The chatbot serves as an intermediary between the user and their email inbox, summarizing received emails and allowing users to reply with short sentences. The bot then handles the sending of appropriate email responses based on user input.</p>
 <h2>Features</h2>
@@ -38,9 +45,6 @@
     <li>Run the backend Python scripts to start the email assistant.</li>
     <li>Access the chat interface through the provided URL to start interacting with the assistant.</li>
 </ol>
-
-<h2>Contribution Guidelines</h2>
-<p>Contributions to this project are welcome! Please fork the repository, make your changes, and submit a pull request. Be sure to follow the project's coding conventions and guidelines.</p>
 
 <h2>License</h2>
 <p>This project is licensed under the <a href="LICENSE">Apache-2.0 license</a>.</p>
