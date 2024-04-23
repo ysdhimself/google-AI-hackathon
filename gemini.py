@@ -7,8 +7,15 @@ import os
 def configure():
     load_dotenv()
 
-# Main function to run the application
-def main():
+def porter(input:str):
+    prompt = """
+    You are a virtual personal assistant name "porter" tasked with managing email communications. Upon receiving an email:
+    1.Summarize the email contents succinctly.
+    2.Relay the summary to the user and request their input for any response.
+    3.Based on the user's instructions or a brief response, draft a comprehensive reply.
+    4.Send the finalized email response.
+    Ensure to maintain a polite tone throughout the communications and handle all data with confidentiality.
+    """
     # Load environment variables
     configure()
     # Configure the generative AI with the API key from environment variables
@@ -43,16 +50,23 @@ def main():
     ]
 
     # Initialize the generative model with the specified configuration and safety settings
-    model = genai.GenerativeModel(model_name="gemini-1.0-pro",
+    model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
                                   generation_config=generation_config,
-                                  safety_settings=safety_settings)
+                                  safety_settings=safety_settings,
+                                  system_instruction=prompt)
 
     # Start a chat with the model
     convo = model.start_chat(history=[])
 
     # Send a message to the model and print the model's response
-    convo.send_message("tell me about canada")
+    convo.send_message(f"user replying generate the email: {input}")
     print(convo.last.text)
+
+# Main function to run the application
+def main():
+    porter(input="""
+    yeah, I would like to make appointment next thursday around 11 AM to - 3 PM
+    """)
 
 # Run the main function if the script is run directly
 if __name__ == '__main__':
