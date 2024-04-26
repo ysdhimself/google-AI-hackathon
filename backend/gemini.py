@@ -2,12 +2,14 @@ import requests
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 
 # Function to load environment variables from .env file
 def configure():
     load_dotenv()
-
 
 class Porter:
     def __init__(self):
@@ -81,6 +83,24 @@ class Porter:
     def print_chat_history(self):
         print(self.chat_history)
 
+    # TODO: Create a function that can received an email message
+    def received_email(self):
+        """
+        probably should be return dictionary (or maybe any other data structure whatever the best)
+        example_return = {
+            "sender" : "example@gmail.com"
+            "subject" : "Example Subject"
+            "text" : "Hello this is example email"
+        }
+        """
+        pass
+
+    # TODO: Create a function that can send an email message
+    def send_email(self, subject, body, to):
+        """
+        Either AI or other method to separate subject, body, and to argument
+        """
+        pass
 
 # Main function to run the application
 def main():
